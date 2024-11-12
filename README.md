@@ -4,9 +4,9 @@ Este proyecto es una aplicación CRUD (Crear, Leer, Actualizar, Eliminar) para g
 ## Instalación y Preparación del Proyecto
 Descargar y ejecutar MySQL installer.  
 https://dev.mysql.com/downloads/installer/  
-Este proyecto se ha llevado a cabo con PyCharm y las instrucciones son contando con que estas utilizando PyCharm, si no tienes PyCharm descargalo del siguiente enlace e instalalo:  
+Este proyecto se ha llevado a cabo con PyCharm y las instrucciones son contando con que estas utilizando PyCharm, si no tienes PyCharm descárgalo del siguiente enlace e instálalo:  
 https://www.jetbrains.com/pycharm/download/?section=windows
-Si no tienes licencia para utilizar la versión profesional puedes descargar la versión comunnity, justo dejabo de la profesional.
+Si no tienes licencia para utilizar la versión profesional puedes descargar la versión community, justo debajo de la profesional.
 
 ### *Configurar la Base de Datos*
 

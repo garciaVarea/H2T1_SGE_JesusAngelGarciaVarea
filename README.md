@@ -34,6 +34,8 @@ Busca el ejecutable de Python 3.11 y agrégalo como intérprete.
 
 Instala mysql-connector-python versión 9.0.0 (IMPORTANTE: no instales la versión 9.1.0 ya que no es compatible).  
 Instala matplotlib (versión por defecto).  
+Instala pandas (versión por defecto).
+Instala Openpxl (versión por defecto).
 
 ### *Configurar Parámetros de Conexión a la Base de Datos*
 

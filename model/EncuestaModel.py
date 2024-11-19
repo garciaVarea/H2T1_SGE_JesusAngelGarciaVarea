@@ -11,7 +11,7 @@ class EncuestaModelo:
             conexion = mysql.connector.connect(
                 host='localhost',
                 user='root',
-                password='curso',
+                password='',
                 database='encuestas'
             )
             if conexion.is_connected():

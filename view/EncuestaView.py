@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import pandas as pd
 
 
 class EncuestaVista:
@@ -9,7 +10,7 @@ class EncuestaVista:
         self.root = root
         self.controller = controller
         self.root.title("Encuesta CRUD")
-        self.root.geometry("1300x600")
+        self.root.geometry("1450x600")
         self.root.config(bg="#f4f4f4")  # Fondo gris suave
         self.create_widgets() # Crear los widgets de la interfaz
         self.mostrar_encuestas() # Mostrar todas las encuestas al iniciar la aplicación
@@ -116,6 +117,9 @@ class EncuestaVista:
                                        bg="#FF5722", fg="white", font=("Arial", 12, "bold"), relief="flat")
         self.graph_button3.pack(side=tk.LEFT, padx=10, pady=5)
 
+        self.export_button = tk.Button(self.menu_frame, text="Exportar a Excel", command=self.exportar_a_excel,
+                                       bg="#2196F3", fg="white", font=("Arial", 12, "bold"), relief="flat")
+        self.export_button.pack(side=tk.LEFT, padx=10, pady=5)
     def mostrar_grafico_alta_frecuencia(self):
         encuestas = self.controller.consultar_encuestas(filtro="BebidasSemana > 10")
         edades = [encuesta[1] for encuesta in encuestas]
@@ -295,3 +299,17 @@ class EncuestaVista:
         messagebox.showinfo("Información", "Encuesta eliminada")
         self.delete_window.destroy()
         self.mostrar_encuestas()
+
+    def exportar_a_excel(self):
+        encuestas = self.controller.leer_encuestas()
+        if not encuestas:
+            messagebox.showerror("Error", "No hay datos para exportar")
+            return
+
+        columns = ["ID", "Edad", "Sexo", "BebidasSemana", "CervezasSemana", "BebidasFinSemana",
+                   "BebidasDestiladasSemana", "VinosSemana", "PerdidasControl", "DiversionDependenciaAlcohol",
+                   "ProblemasDigestivos", "TensionAlta", "DolorCabeza"]
+        df = pd.DataFrame(encuestas, columns=columns)
+        file_path = "encuestas.xlsx"
+        df.to_excel(file_path, index=False)
+        messagebox.showinfo("Información", f"Datos exportados exitosamente a {file_path}")

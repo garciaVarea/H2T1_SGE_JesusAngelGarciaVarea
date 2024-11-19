@@ -41,6 +41,7 @@ Instala Openpxl (versión por defecto).
 
 Abre el archivo EncuestaModel.py.  
 En el método conectar(), modifica los parámetros de la base de datos para que coincidan con tu configuración de MySQL.  
+(Lo más probable es que la contraseña de la configuración esté vacía porque en mi equipo no tengo contraseña, en los equipos de campus se usa curso como contraseña)
 
 ### *Ejecutar el Proyecto*
 
